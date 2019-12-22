@@ -1,3 +1,8 @@
+/vendor/
+setup.sh
+Gemfile
+Gemfile.lock
+
 # OS X
 .DS_Store
 
