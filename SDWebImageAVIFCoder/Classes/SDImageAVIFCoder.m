@@ -32,7 +32,11 @@ static CGImageRef CreateImageFromBuffer(avifImage * avif, vImage_Buffer* result)
     // https://github.com/AOMediaCodec/libavif/blob/7d36984b2994210b/include/avif/avif.h#L149-L236
     CGColorSpaceRef colorSpace = NULL;
     if(monochrome){
-        colorSpace = CGColorSpaceCreateDeviceGray();
+        vImage_Error err;
+        vImageWhitePoint whitePoint ;
+        vImageTransferFunction transferFunction;
+        CGColorRenderingIntent intent;
+        colorSpace = vImageCreateMonochromeColorSpaceWithWhitePointAndTransferFunction(&whitePoint, &transferFunction, intent, kvImageNoFlags, &err);
     }else{
         colorSpace = CGColorSpaceCreateDeviceRGB();
     }
