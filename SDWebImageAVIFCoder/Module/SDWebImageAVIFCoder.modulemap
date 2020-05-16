@@ -1,5 +1,5 @@
 framework module SDWebImageAVIFCoder {
-  umbrella header "SDWebImageAVIFCoder.h"
+  umbrella header "SDImageAVIFCoder.h"
 
   export *
   module * { export * }
